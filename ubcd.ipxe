@@ -1,0 +1,9 @@
+#!ipxe
+###
+### waltherIT UBCD menu
+###
+
+:ubcd
+kernel https://boot.netboot.xyz/memdisk raw iso
+initrd http://boot-files.walther.ml/ubcd/ubcd538.iso
+boot || exit 0
