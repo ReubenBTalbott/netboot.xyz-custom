@@ -1,22 +1,18 @@
 #!ipxe
-###
-### walther IT menu
-###
 
 goto ${menu} ||
 
 :custom_menu
-menu walther IT
+menu Reuben Talbott custom menu
 item --gap OS:
 item windows ${space} Windows
-item ubcd ${space} Ultimate-Boot-CD
 choose menu || goto custom_exit
 echo ${cls}
 goto ${menu} ||
 goto change_menu
 
 :change_menu
-chain --autofree https://raw.githubusercontent.com/${github_user}/netboot.xyz-custom/master/${menu}.ipxe || goto error
+chain --autofree https://raw.githubusercontent.com/ReubenBTalbott/netboot.xyz-custom/master/${menu}.ipxe || goto error
 goto custom_menu
 
 :custom_exit
